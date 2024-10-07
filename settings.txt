@@ -1,0 +1,1572 @@
+table 0
+  "chat" = table 1
+  endTable
+  "luajava" = table 2
+    "allowPrivateAccess" = false
+  endTable
+  "runningScript" = table 3
+    "stopButton" = table 4
+      "colors" = table 5
+        "frame" = table 6
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "text" = table 7
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 8
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 9
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+  endTable
+  "bindingsMenu" = table 10
+    "openChangeLog" = table 11
+      "colors" = table 12
+        "text" = table 13
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 14
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 15
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 16
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "scriptManagerButton" = table 17
+      "colors" = table 18
+        "text" = table 19
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 20
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 21
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 22
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "removeProfileButton" = table 23
+      "colors" = table 24
+        "text" = table 25
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 26
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 27
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 28
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "addProfileButton" = table 29
+      "colors" = table 30
+        "text" = table 31
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 32
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 33
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 34
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "addBindingButton" = table 35
+      "colors" = table 36
+        "text" = table 37
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 38
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 39
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 40
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "profileSelect" = table 41
+      "textBackground" = table 42
+        "colors" = table 43
+          "frame" = table 44
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "shade" = table 45
+            1 = 0.39215687
+            2 = 0.39215687
+            3 = 1
+            4 = 0.39215687
+          endTable
+          "fill" = table 46
+            1 = 0
+            2 = 0
+            3 = 0
+            4 = 1
+          endTable
+        endTable
+      endTable
+      "options" = table 47
+        "colors" = table 48
+          "text" = table 49
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "frame" = table 50
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "shade" = table 51
+            1 = 0.39215687
+            2 = 0.39215687
+            3 = 1
+            4 = 0.39215687
+          endTable
+          "fill" = table 52
+            1 = 0
+            2 = 0
+            3 = 0
+            4 = 1
+          endTable
+        endTable
+      endTable
+      "colors" = table 53
+        "backgroundFrame" = table 54
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "text" = table 55
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "backgroundFill" = table 56
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+      "scrollBar" = table 57
+        "colors" = table 58
+          "bgFrame" = table 59
+            1 = 0.39215687
+            2 = 0.39215687
+            3 = 1
+            4 = 1
+          endTable
+          "buttonShade" = table 60
+            1 = 0.39215687
+            2 = 0.39215687
+            3 = 1
+            4 = 0.39215687
+          endTable
+          "buttonFill" = table 61
+            1 = 0.8
+            2 = 0.8745098
+            3 = 1
+            4 = 1
+          endTable
+          "buttonDetail" = table 62
+            1 = 0
+            2 = 0.38039216
+            3 = 1
+            4 = 1
+          endTable
+          "buttonFrame" = table 63
+            1 = 0.8627451
+            2 = 0.8627451
+            3 = 0.8627451
+            4 = 1
+          endTable
+          "bgFill" = table 64
+            1 = 0.5568628
+            2 = 0.5568628
+            3 = 0.5568628
+            4 = 1
+          endTable
+        endTable
+      endTable
+      "dropButton" = table 65
+        "colors" = table 66
+          "text" = table 67
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "frame" = table 68
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "shade" = table 69
+            1 = 0.39215687
+            2 = 0.39215687
+            3 = 1
+            4 = 0.39215687
+          endTable
+          "fill" = table 70
+            1 = 0
+            2 = 0
+            3 = 0
+            4 = 1
+          endTable
+        endTable
+      endTable
+    endTable
+  endTable
+  "browserTextPreview" = table 71
+    "horzScrollBar" = table 72
+      "colors" = table 73
+        "bgFrame" = table 74
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 1
+        endTable
+        "buttonShade" = table 75
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "buttonFill" = table 76
+          1 = 0.8
+          2 = 0.8745098
+          3 = 1
+          4 = 1
+        endTable
+        "buttonDetail" = table 77
+          1 = 0
+          2 = 0.38039216
+          3 = 1
+          4 = 1
+        endTable
+        "buttonFrame" = table 78
+          1 = 0.8627451
+          2 = 0.8627451
+          3 = 0.8627451
+          4 = 1
+        endTable
+        "bgFill" = table 79
+          1 = 0.5568628
+          2 = 0.5568628
+          3 = 0.5568628
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "tabCount" = 2
+    "vertScrollBar" = table 80
+      "colors" = table 81
+        "bgFrame" = table 82
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 1
+        endTable
+        "buttonShade" = table 83
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "buttonFill" = table 84
+          1 = 0.8
+          2 = 0.8745098
+          3 = 1
+          4 = 1
+        endTable
+        "buttonDetail" = table 85
+          1 = 0
+          2 = 0.38039216
+          3 = 1
+          4 = 1
+        endTable
+        "buttonFrame" = table 86
+          1 = 0.8627451
+          2 = 0.8627451
+          3 = 0.8627451
+          4 = 1
+        endTable
+        "bgFill" = table 87
+          1 = 0.5568628
+          2 = 0.5568628
+          3 = 0.5568628
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "colors" = table 88
+      "selectionFrame" = table 89
+        1 = 0
+        2 = 0.5176471
+        3 = 0.30980393
+        4 = 1
+      endTable
+      "cursorOn" = table 90
+        1 = 0.35686275
+        2 = 0.7137255
+        3 = 1
+        4 = 1
+      endTable
+      "selectionFill" = table 91
+        1 = 0.22352941
+        2 = 0.80784315
+        3 = 0.57254905
+        4 = 1
+      endTable
+      "textFill" = table 92
+        1 = 0.5019608
+        2 = 0.5019608
+        3 = 0.5019608
+        4 = 1
+      endTable
+      "comment" = table 93
+        1 = 0
+        2 = 0.33333334
+        3 = 0
+        4 = 1
+      endTable
+      "keyword" = table 94
+        1 = 0
+        2 = 0.3137255
+        3 = 0.39215687
+        4 = 1
+      endTable
+      "function" = table 95
+        1 = 0.5019608
+        2 = 1
+        3 = 1
+        4 = 1
+      endTable
+      "stringBoxFrame" = table 96
+        1 = 1
+        2 = 0.5019608
+        3 = 0.2509804
+        4 = 1
+      endTable
+      "plainText" = table 97
+        1 = 0
+        2 = 0
+        3 = 0
+        4 = 1
+      endTable
+      "table" = table 98
+        1 = 0.47058824
+        2 = 0.98039216
+        3 = 0.39215687
+        4 = 1
+      endTable
+      "variable" = table 99
+        1 = 0
+        2 = 0.42745098
+        3 = 0.03529412
+        4 = 1
+      endTable
+      "frame" = table 100
+        1 = 1
+        2 = 1
+        3 = 1
+        4 = 1
+      endTable
+      "stringBoxFill" = table 101
+        1 = 1
+        2 = 0.5019608
+        3 = 0.2509804
+        4 = 0.23529412
+      endTable
+    endTable
+  endTable
+  "scriptBrowser" = table 102
+    "createFolderButton" = table 103
+      "colors" = table 104
+        "text" = table 105
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 106
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 107
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 108
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "scriptBrowser" = table 109
+      "colors" = table 110
+        "folder" = table 111
+          1 = 1
+          2 = 1
+          3 = 0.33333334
+          4 = 1
+        endTable
+        "file" = table 112
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "selectedFile" = table 113
+          1 = 0.33333334
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "selectedFolder" = table 114
+          1 = 1
+          2 = 0.33333334
+          3 = 1
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "columns" = 3
+    "returnButton" = table 115
+      "colors" = table 116
+        "text" = table 117
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 118
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 119
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 120
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "pasteButton" = table 121
+      "colors" = table 122
+        "text" = table 123
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 124
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 125
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 126
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "searchButton" = table 127
+      "colors" = table 128
+        "text" = table 129
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 130
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 131
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 132
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "backButton" = table 133
+      "colors" = table 134
+        "text" = table 135
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 136
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 137
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 138
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "createFileButton" = table 139
+      "colors" = table 140
+        "text" = table 141
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 142
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 143
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 144
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "forwardButton" = table 145
+      "colors" = table 146
+        "text" = table 147
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 148
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 149
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 150
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "colors" = table 151
+      "backgroundFrame" = table 152
+        1 = 1
+        2 = 1
+        3 = 1
+        4 = 1
+      endTable
+      "backgroundFill" = table 153
+        1 = 0
+        2 = 0
+        3 = 0
+        4 = 1
+      endTable
+    endTable
+    "scrollBar" = table 154
+      "colors" = table 155
+        "bgFrame" = table 156
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 1
+        endTable
+        "buttonShade" = table 157
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "buttonFill" = table 158
+          1 = 0.8
+          2 = 0.8745098
+          3 = 1
+          4 = 1
+        endTable
+        "buttonDetail" = table 159
+          1 = 0
+          2 = 0.38039216
+          3 = 1
+          4 = 1
+        endTable
+        "buttonFrame" = table 160
+          1 = 0.8627451
+          2 = 0.8627451
+          3 = 0.8627451
+          4 = 1
+        endTable
+        "bgFill" = table 161
+          1 = 0.5568628
+          2 = 0.5568628
+          3 = 0.5568628
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "popupPrompt" = table 162
+      "colors" = table 163
+        "text" = table 164
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "addressBackground" = table 165
+      "colors" = table 166
+        "frame" = table 167
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 168
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 169
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+  endTable
+  "maxLines" = 100
+  "changeLog" = table 170
+    "showOnStartup" = true
+    "shownVersions" = table 171
+      "7.11.1" = true
+    endTable
+  endTable
+  "profiles" = table 172
+    "DEFAULT" = table 173
+    endTable
+  endTable
+  "editor" = table 174
+    "horzScrollBar" = table 175
+      "colors" = table 176
+        "bgFrame" = table 177
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 1
+        endTable
+        "buttonShade" = table 178
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "buttonFill" = table 179
+          1 = 0.8
+          2 = 0.8745098
+          3 = 1
+          4 = 1
+        endTable
+        "buttonDetail" = table 180
+          1 = 0
+          2 = 0.38039216
+          3 = 1
+          4 = 1
+        endTable
+        "buttonFrame" = table 181
+          1 = 0.8627451
+          2 = 0.8627451
+          3 = 0.8627451
+          4 = 1
+        endTable
+        "bgFill" = table 182
+          1 = 0.5568628
+          2 = 0.5568628
+          3 = 0.5568628
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "saveButton" = table 183
+      "colors" = table 184
+        "text" = table 185
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 186
+          1 = 0.33333334
+          2 = 0.33333334
+          3 = 0.33333334
+          4 = 1
+        endTable
+        "shade" = table 187
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 188
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "colors" = table 189
+      "selectionFrame" = table 190
+        1 = 0
+        2 = 0.5176471
+        3 = 0.30980393
+        4 = 1
+      endTable
+      "cursorOn" = table 191
+        1 = 0.35686275
+        2 = 0.7137255
+        3 = 1
+        4 = 1
+      endTable
+      "selectionFill" = table 192
+        1 = 0.22352941
+        2 = 0.80784315
+        3 = 0.57254905
+        4 = 1
+      endTable
+      "textFill" = table 193
+        1 = 0.5019608
+        2 = 0.5019608
+        3 = 0.5019608
+        4 = 1
+      endTable
+      "comment" = table 194
+        1 = 0
+        2 = 0.33333334
+        3 = 0
+        4 = 1
+      endTable
+      "keyword" = table 195
+        1 = 0
+        2 = 0.3137255
+        3 = 0.39215687
+        4 = 1
+      endTable
+      "function" = table 196
+        1 = 0.5019608
+        2 = 1
+        3 = 1
+        4 = 1
+      endTable
+      "stringBoxFrame" = table 197
+        1 = 1
+        2 = 0.5019608
+        3 = 0.2509804
+        4 = 1
+      endTable
+      "plainText" = table 198
+        1 = 0
+        2 = 0
+        3 = 0
+        4 = 1
+      endTable
+      "table" = table 199
+        1 = 0.47058824
+        2 = 0.98039216
+        3 = 0.39215687
+        4 = 1
+      endTable
+      "variable" = table 200
+        1 = 0
+        2 = 0.42745098
+        3 = 0.03529412
+        4 = 1
+      endTable
+      "frame" = table 201
+        1 = 1
+        2 = 1
+        3 = 1
+        4 = 1
+      endTable
+      "stringBoxFill" = table 202
+        1 = 1
+        2 = 0.5019608
+        3 = 0.2509804
+        4 = 0.23529412
+      endTable
+    endTable
+    "vertScrollBar" = table 203
+      "colors" = table 204
+        "bgFrame" = table 205
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 1
+        endTable
+        "buttonShade" = table 206
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "buttonFill" = table 207
+          1 = 0.8
+          2 = 0.8745098
+          3 = 1
+          4 = 1
+        endTable
+        "buttonDetail" = table 208
+          1 = 0
+          2 = 0.38039216
+          3 = 1
+          4 = 1
+        endTable
+        "buttonFrame" = table 209
+          1 = 0.8627451
+          2 = 0.8627451
+          3 = 0.8627451
+          4 = 1
+        endTable
+        "bgFill" = table 210
+          1 = 0.5568628
+          2 = 0.5568628
+          3 = 0.5568628
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "tabCount" = 2
+    "runButton" = table 211
+      "colors" = table 212
+        "text" = table 213
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 214
+          1 = 0.33333334
+          2 = 0.33333334
+          3 = 0.33333334
+          4 = 1
+        endTable
+        "shade" = table 215
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 216
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "exitButton" = table 217
+      "colors" = table 218
+        "text" = table 219
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 220
+          1 = 0.33333334
+          2 = 0.33333334
+          3 = 0.33333334
+          4 = 1
+        endTable
+        "shade" = table 221
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 222
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+  endTable
+  "promptGui" = table 223
+    "scrollBar" = table 224
+      "colors" = table 225
+        "bgFrame" = table 226
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 1
+        endTable
+        "buttonShade" = table 227
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "buttonFill" = table 228
+          1 = 0.8
+          2 = 0.8745098
+          3 = 1
+          4 = 1
+        endTable
+        "buttonDetail" = table 229
+          1 = 0
+          2 = 0.38039216
+          3 = 1
+          4 = 1
+        endTable
+        "buttonFrame" = table 230
+          1 = 0.8627451
+          2 = 0.8627451
+          3 = 0.8627451
+          4 = 1
+        endTable
+        "bgFill" = table 231
+          1 = 0.5568628
+          2 = 0.5568628
+          3 = 0.5568628
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "colors" = table 232
+      "backgroundFrame" = table 233
+        1 = 1
+        2 = 1
+        3 = 1
+        4 = 1
+      endTable
+      "backgroundFill" = table 234
+        1 = 0
+        2 = 0
+        3 = 0
+        4 = 1
+      endTable
+    endTable
+  endTable
+  "events" = table 235
+    "potionStatusFrequency" = 20
+  endTable
+  "scrollBar" = table 236
+    "colors" = table 237
+      "bgFrame" = table 238
+        1 = 0.39215687
+        2 = 0.39215687
+        3 = 1
+        4 = 1
+      endTable
+      "buttonShade" = table 239
+        1 = 0.39215687
+        2 = 0.39215687
+        3 = 1
+        4 = 0.39215687
+      endTable
+      "buttonFill" = table 240
+        1 = 0.8
+        2 = 0.8745098
+        3 = 1
+        4 = 1
+      endTable
+      "buttonDetail" = table 241
+        1 = 0
+        2 = 0.38039216
+        3 = 1
+        4 = 1
+      endTable
+      "buttonFrame" = table 242
+        1 = 0.8627451
+        2 = 0.8627451
+        3 = 0.8627451
+        4 = 1
+      endTable
+      "bgFill" = table 243
+        1 = 0.5568628
+        2 = 0.5568628
+        3 = 0.5568628
+        4 = 1
+      endTable
+    endTable
+  endTable
+  "popupPrompt" = table 244
+    "colors" = table 245
+      "choicePicker" = table 246
+        "textBackground" = table 247
+          "colors" = table 248
+            "frame" = table 249
+              1 = 1
+              2 = 1
+              3 = 1
+              4 = 1
+            endTable
+            "shade" = table 250
+              1 = 0.39215687
+              2 = 0.39215687
+              3 = 1
+              4 = 0.39215687
+            endTable
+            "fill" = table 251
+              1 = 0
+              2 = 0
+              3 = 0
+              4 = 1
+            endTable
+          endTable
+        endTable
+        "options" = table 252
+          "colors" = table 253
+            "text" = table 254
+              1 = 1
+              2 = 1
+              3 = 1
+              4 = 1
+            endTable
+            "frame" = table 255
+              1 = 1
+              2 = 1
+              3 = 1
+              4 = 1
+            endTable
+            "shade" = table 256
+              1 = 0.39215687
+              2 = 0.39215687
+              3 = 1
+              4 = 0.39215687
+            endTable
+            "fill" = table 257
+              1 = 0
+              2 = 0
+              3 = 0
+              4 = 1
+            endTable
+          endTable
+        endTable
+        "colors" = table 258
+          "backgroundFrame" = table 259
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "text" = table 260
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "backgroundFill" = table 261
+            1 = 0
+            2 = 0
+            3 = 0
+            4 = 1
+          endTable
+        endTable
+        "scrollBar" = table 262
+          "colors" = table 263
+            "bgFrame" = table 264
+              1 = 0.39215687
+              2 = 0.39215687
+              3 = 1
+              4 = 1
+            endTable
+            "buttonShade" = table 265
+              1 = 0.39215687
+              2 = 0.39215687
+              3 = 1
+              4 = 0.39215687
+            endTable
+            "buttonFill" = table 266
+              1 = 0.8
+              2 = 0.8745098
+              3 = 1
+              4 = 1
+            endTable
+            "buttonDetail" = table 267
+              1 = 0
+              2 = 0.38039216
+              3 = 1
+              4 = 1
+            endTable
+            "buttonFrame" = table 268
+              1 = 0.8627451
+              2 = 0.8627451
+              3 = 0.8627451
+              4 = 1
+            endTable
+            "bgFill" = table 269
+              1 = 0.5568628
+              2 = 0.5568628
+              3 = 0.5568628
+              4 = 1
+            endTable
+          endTable
+        endTable
+        "dropButton" = table 270
+          "colors" = table 271
+            "text" = table 272
+              1 = 1
+              2 = 1
+              3 = 1
+              4 = 1
+            endTable
+            "frame" = table 273
+              1 = 1
+              2 = 1
+              3 = 1
+              4 = 1
+            endTable
+            "shade" = table 274
+              1 = 0.39215687
+              2 = 0.39215687
+              3 = 1
+              4 = 0.39215687
+            endTable
+            "fill" = table 275
+              1 = 0
+              2 = 0
+              3 = 0
+              4 = 1
+            endTable
+          endTable
+        endTable
+      endTable
+      "cancelButton" = table 276
+        "colors" = table 277
+          "text" = table 278
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "frame" = table 279
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "shade" = table 280
+            1 = 0.39215687
+            2 = 0.39215687
+            3 = 1
+            4 = 0.39215687
+          endTable
+          "fill" = table 281
+            1 = 0
+            2 = 0
+            3 = 0
+            4 = 1
+          endTable
+        endTable
+      endTable
+      "okButton" = table 282
+        "colors" = table 283
+          "text" = table 284
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "frame" = table 285
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "shade" = table 286
+            1 = 0.39215687
+            2 = 0.39215687
+            3 = 1
+            4 = 0.39215687
+          endTable
+          "fill" = table 287
+            1 = 0
+            2 = 0
+            3 = 0
+            4 = 1
+          endTable
+        endTable
+      endTable
+    endTable
+    "cancelButton" = table 288
+      "colors" = table 289
+        "text" = table 290
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 291
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 292
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 293
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "choiceBox" = table 294
+      "textBackground" = table 295
+        "colors" = table 296
+          "frame" = table 297
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "shade" = table 298
+            1 = 0.39215687
+            2 = 0.39215687
+            3 = 1
+            4 = 0.39215687
+          endTable
+          "fill" = table 299
+            1 = 0
+            2 = 0
+            3 = 0
+            4 = 1
+          endTable
+        endTable
+      endTable
+      "options" = table 300
+        "colors" = table 301
+          "text" = table 302
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "frame" = table 303
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "shade" = table 304
+            1 = 0.39215687
+            2 = 0.39215687
+            3 = 1
+            4 = 0.39215687
+          endTable
+          "fill" = table 305
+            1 = 0
+            2 = 0
+            3 = 0
+            4 = 1
+          endTable
+        endTable
+      endTable
+      "colors" = table 306
+        "backgroundFrame" = table 307
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "text" = table 308
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "backgroundFill" = table 309
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+      "scrollBar" = table 310
+        "colors" = table 311
+          "bgFrame" = table 312
+            1 = 0.39215687
+            2 = 0.39215687
+            3 = 1
+            4 = 1
+          endTable
+          "buttonShade" = table 313
+            1 = 0.39215687
+            2 = 0.39215687
+            3 = 1
+            4 = 0.39215687
+          endTable
+          "buttonFill" = table 314
+            1 = 0.8
+            2 = 0.8745098
+            3 = 1
+            4 = 1
+          endTable
+          "buttonDetail" = table 315
+            1 = 0
+            2 = 0.38039216
+            3 = 1
+            4 = 1
+          endTable
+          "buttonFrame" = table 316
+            1 = 0.8627451
+            2 = 0.8627451
+            3 = 0.8627451
+            4 = 1
+          endTable
+          "bgFill" = table 317
+            1 = 0.5568628
+            2 = 0.5568628
+            3 = 0.5568628
+            4 = 1
+          endTable
+        endTable
+      endTable
+      "dropButton" = table 318
+        "colors" = table 319
+          "text" = table 320
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "frame" = table 321
+            1 = 1
+            2 = 1
+            3 = 1
+            4 = 1
+          endTable
+          "shade" = table 322
+            1 = 0.39215687
+            2 = 0.39215687
+            3 = 1
+            4 = 0.39215687
+          endTable
+          "fill" = table 323
+            1 = 0
+            2 = 0
+            3 = 0
+            4 = 1
+          endTable
+        endTable
+      endTable
+    endTable
+    "background" = table 324
+      "colors" = table 325
+        "frame" = table 326
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 327
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 328
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+    "okButton" = table 329
+      "colors" = table 330
+        "text" = table 331
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "frame" = table 332
+          1 = 1
+          2 = 1
+          3 = 1
+          4 = 1
+        endTable
+        "shade" = table 333
+          1 = 0.39215687
+          2 = 0.39215687
+          3 = 1
+          4 = 0.39215687
+        endTable
+        "fill" = table 334
+          1 = 0
+          2 = 0
+          3 = 0
+          4 = 1
+        endTable
+      endTable
+    endTable
+  endTable
+  "minecraft" = table 335
+  endTable
+endTable
