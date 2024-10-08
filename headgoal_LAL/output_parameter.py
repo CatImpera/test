@@ -114,7 +114,7 @@ connection.write(f"48 71 {con} 64\n")
 connection.write(f"49 73 {con} 64\n")
 
 #PFL3->LAL
-con = 0.2
+con = 0.3
 for i in range(50,74,2):
 	connection.write(f"{i} 74 {con} 64\n")
 for i in range(51,74,2):

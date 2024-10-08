@@ -19,7 +19,7 @@ tmp_FR = [0 for i in range(8)]
 head = 171
 goal = 182.5
 slope = 0.2
-var_y = 10
+var_y = 6
 place = []
 time_list = []
 strength_list = []
@@ -30,10 +30,10 @@ I_L = []
 I_R = []
 count = 25
 
-for _ in range(500):
+for _ in range(5000):
 	if _<500:
-		net.set_biascurrent(0, 25)
-		net.set_biascurrent(1, 25)
+		net.set_biascurrent(0, 14)
+		net.set_biascurrent(1, 14)
 		net.send_synapse()
 	else:
 		#if((_+1)%100==0):
@@ -41,8 +41,8 @@ for _ in range(500):
 		#	print("count = ", count)
 		#net.set_biascurrent(0, count)
 		#net.set_biascurrent(1, count)
-		net.set_biascurrent(0, 15*1/(1+math.exp((head-goal)*slope))+var_y)
-		net.set_biascurrent(1, 15*1/(1+math.exp(-(head-goal)*slope))+var_y)
+		net.set_biascurrent(0, 8*1/(1+math.exp((head-goal)*slope))+var_y)
+		net.set_biascurrent(1, 8*1/(1+math.exp(-(head-goal)*slope))+var_y)
 		net.send_synapse()
 	for idx, n in enumerate(neurons):
 		potential[n].write(f"{int(net.potential(idx))}\n")
@@ -66,12 +66,12 @@ for _ in range(500):
 		#print("  {:<5}  {:1}        ".format(turn, strength), end = "")
 		if turn>0:
 			#print("->")
-			if _>=300:
+			if _>=500:
 				head = head+0.02*strength
 			#print("tmp = ","Right "+str(strength))
 		elif turn<0:
 			#print("<-")
-			if _>=300:
+			if _>=500:
 				head = head-0.02*strength
 		#else:
 			#print("  ")
@@ -93,6 +93,11 @@ for f in firingrate.values():
 plt.figure()
 plt.plot(neuron(glob.glob("potential/potential_L.txt")))
 plt.savefig('potential_L.png')
+plt.close()
+
+plt.figure()
+plt.plot(neuron(glob.glob("firingrate/firingrate_L.txt")))
+plt.savefig('firingrate_L.png')
 plt.close()
 '''
 fig, ((ax1, ax2, ax3, ax4), (ax5, ax6, ax7, ax8)) = plt.subplots(2, 4, sharex=True, sharey=False)
@@ -138,7 +143,7 @@ plt.show()
 plt.plot(neuron(glob.glob("potential_DN_R.txt")))
 plt.show()
 '''
-'''
+
 fig, ((ax1, ax2, ax3, ax4), (ax5, ax6, ax7, ax8)) = plt.subplots(2, 4, sharex=True, sharey=False)
 fig.suptitle('potential')
 ax1.plot(neuron(glob.glob("firingrate/firingrate_L.txt")))
@@ -191,5 +196,5 @@ ax2.plot(time_list, strength_list,color ='tab:blue', label = 'strength')
 ax1.axhline(goal, linestyle = '-')
 fig.tight_layout()
 fig.savefig('figure/place_strength.png')
-'''
+
 

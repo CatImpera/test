@@ -13,98 +13,102 @@ inp_g = 24#float(sys.argv[1])#14.5
 inp_h = 34#float(sys.argv[2])#20
 plot = True
 
-goal_angle = [2,6,10,14,18,22,24,28,32,36,42,46]    #input range(12 - 36)
-head_angle = [3, 9, 15, 21, 27, 33, 39, 45]     #input range(12-36)
-
-goaln1 = 999999
-goaln2 = 999999
-
-headn1 = 999999
-headn2 = 999999
 
 
-#####goal#####
-for k in range(0,11):
-    if inp_g == goal_angle[k]:
-        goaln1 = k
-        break
-    if inp_g == 46:
-        goaln1=345
-        break
-    if inp_g > 46 or inp_g < 2:
-        goaln1 = 11
-        goaln2 = 0
-        break
-    if inp_g > goal_angle[k] and inp_g < goal_angle[k+1] :
-        goaln1 = k
-        goaln2 = k+1
-        break
+def inputgoal(goalplace):
+
+	inp_g = goalplace
+	
+	goal_angle = [2,6,10,14,18,22,26,30,34,38,42,46]    #input range(12 - 36)
+	
+	goaln1 = 999999
+	goaln2 = 999999
+	
+	#####goal#####
+	for k in range(0,11):
+		if inp_g == goal_angle[k]:
+		    goaln1 = k
+		    goaln2 = k
+		    break
+		if inp_g == 46:
+		    goaln1=345
+		    break
+		if inp_g > 46 or inp_g < 2:
+		    goaln1 = 11
+		    goaln2 = 0
+		    break
+		if inp_g > goal_angle[k] and inp_g < goal_angle[k+1] :
+		    goaln1 = k
+		    goaln2 = k+1
+		    break
 
 
-ratio_g = 0
+	ratio_g = 0
 
-#30 = 360/12
-#48/12 = 4
+	#30 = 360/12
+	#48/12 = 4
 
-if inp_g < 2:
-    ratio_g = (inp_g+1)/4
-elif inp_g > 46:
-    ratio_g = (48-inp_g)/4
-elif inp_g == 48:
-    ratio_g = 0.5
-elif goaln2 == 999999:
-    ratio_g = 0
-    goaln2 = goaln1
-else:
-    ratio_g = (inp_g-goal_angle[goaln1])/4
+	if inp_g < 2:
+		ratio_g = (inp_g+1)/4
+	elif inp_g > 46:
+		ratio_g = (48-inp_g)/4
+	else:
+		ratio_g = (inp_g-goal_angle[goaln1])/4
 
-gIn1 = 1*(1-ratio_g)
-gIn2 = 1*ratio_g
+	gIn1 = 1*(1-ratio_g)
+	gIn2 = 1*ratio_g
+	
+	goaln1 = goaln1+8
+	goaln2 = goaln2+8
+	
+	return goaln1, goaln2, gIn1, gIn2
+	
+def inputhead(headplace):
+	inp_h = headplace
+	
+	head_angle = [3, 9, 15, 21, 27, 33, 39, 45]     #input range(12-36)
+	
+	headn1 = 999999
+	headn2 = 999999
+	
+	#####head#####
 
-#####head#####
 
+	for k in range(0,7):
+		if inp_h == head_angle[k]:
+		    headn1 = k
+		    break
+		if inp_h > head_angle[k] and inp_h < head_angle[k+1] :
+		    headn1 = k
+		    headn2 = k+1
+		    break
 
-for k in range(0,7):
-    if inp_h == head_angle[k]:
-        headn1 = k
-        break
-    if inp_h > head_angle[k] and inp_h < head_angle[k+1] :
-        headn1 = k
-        headn2 = k+1
-        break
+	ratio_h =0
 
-ratio_h =0
+	#45 = 360/8
+	#48/8 = 6
 
-#45 = 360/8
-#48/8 = 6
+	if inp_h < 3:
+		ratio_h = (inp_h+3)/6
+	elif inp_h > 45:
+		ratio_h = (48-inp_h)/6
+	elif inp_h == 48:
+		ratio_h = 0.5
+	elif headn2 == 999999:
+		ratio_h = 0
+		headn2 = headn1
+	else:
+		ratio_h = (inp_h-head_angle[headn1])/6
 
-if inp_h < 3:
-    ratio_h = (inp_h+3)/6
-elif inp_h > 45:
-    ratio_h = (48-inp_h)/6
-elif inp_h == 48:
-    ratio_h = 0.5
-elif headn2 == 999999:
-    ratio_h = 0
-    headn2 = headn1
-else:
-    ratio_h = (inp_h-head_angle[headn1])/6
+	hIn1 = 1*(1-ratio_h)
+	hIn2 = 1*ratio_h
+	
+	return headn1, headn2, hIn1, hIn2
 
-hIn1 = 1*(1-ratio_h)
-hIn2 = 1*ratio_h
-
-goaln1 = goaln1+8
-goaln2 = goaln2+8
-"""
-print("headn2 = ", headn2,"15*hIn2 = ", 15*hIn2)
-print("headn1 = ", headn1,"15*hIn1 = ", 15*hIn1)
-print("goaln2 = ", goaln2,"15*gIn2 = ", 15*gIn2)
-print("goaln1 = ", goaln1,"15*gIn1 = ", 15*gIn1)
-"""
 
 net = iqif.lifnet("parameter/neuronParameter_LIF.txt", "parameter/Connection_Table_LIF.txt")
-inhead_list = [f"inhead_{inhead}" for inhead in range(8)]
-ingoal_list = [f"ingoal_{ingoal}" for ingoal in range(12)]
+inhead_list = [f"inhead_{inhead}" for inhead in range(8)]                                                      
+ingoal_list = [f"ingoal_{ingoal}" for ingoal in range(12)]                                                     
 inheadin_list = ["inheadin_0"]
 ingoalin_list = ["ingoalin_0"]
 FC2_list = [f"FC2_{FC2}" for FC2 in range(12)]
@@ -116,14 +120,46 @@ potential = {n: open(f"potential/potential_{n}.txt", "w") for n in neu_list}
 firingrate = {n: open(f"firingrate/firingrate_{n}.txt", "w") for n in neu_list}
 FR_list = [[0 for j in range(10)] for i in range(len(neu_list))]
 tmp_FR = [0 for i in range(len(neu_list))]
-time = 20000
 
-for i in range(time):
+#parameter---------------------------------------------------------------------
+time = 4200
+goallist = []
+head = 24
+goal = 24
+headn1,headn2,hIn1,hIn2 =inputhead(head)
+goaln1,goaln2,gIn1,gIn2 =inputgoal(goal)
+print("headn1,headn2,hIn1,hIn2 = ",headn1,headn2,hIn1,hIn2)
+print("goaln1,goaln2,gIn1,gIn2 = ",goaln1,goaln2,gIn1,gIn2)
+for i in range(1000):
 	net.set_biascurrent(headn2, 15*hIn2)
 	net.set_biascurrent(headn1, 15*hIn1)
 	net.set_biascurrent(goaln2, 15*gIn2)
 	net.set_biascurrent(goaln1, 15*gIn1)
 	net.send_synapse()
+	goallist.append(0)
+	for idx, n in enumerate(neu_list):
+		potential[n].write(f"{int(net.potential(idx))}\n")
+	if((i+1)%10==0):
+		for idx, n in enumerate(neu_list):
+			tmp_FR[idx] = net.spike_count(idx)
+		#print('tmp_FR = ', tmp_FR)	
+		FR_list = update(FR_list,tmp_FR)
+		for idx, n in enumerate(neu_list):
+			firingrate[n].write(f"{sum(FR_list[idx])}\n")
+	
+head = 24
+goal = 34
+headn1,headn2,hIn1,hIn2 =inputhead(head)
+goaln1,goaln2,gIn1,gIn2 =inputgoal(goal)
+print("headn1,headn2,hIn1,hIn2 = ",headn1,headn2,hIn1,hIn2)
+print("goaln1,goaln2,gIn1,gIn2 = ",goaln1,goaln2,gIn1,gIn2)
+for i in range(200):
+	net.set_biascurrent(headn2, 15*hIn2)
+	net.set_biascurrent(headn1, 15*hIn1)
+	net.set_biascurrent(goaln2, 15*gIn2)
+	net.set_biascurrent(goaln1, 15*gIn1)
+	net.send_synapse()
+	goallist.append(goal)
 	for idx, n in enumerate(neu_list):
 		potential[n].write(f"{int(net.potential(idx))}\n")
 	if((i+1)%10==0):
@@ -134,12 +170,59 @@ for i in range(time):
 		for idx, n in enumerate(neu_list):
 			firingrate[n].write(f"{sum(FR_list[idx])}\n")
 
+
+fold = 0.01
+PFL3L_list = []
+PFL3R_list = []
+for i in range(3000):
+
+	left_motor = sum(FR_list[80])
+	right_motor = sum(FR_list[81])
+	turn = (left_motor-right_motor)*fold
+	goal = goal + turn
+	goallist.append(goal)
+	tmp = 0
+	for j in range(50,73,2):
+		tmp+=sum(FR_list[j])
+	PFL3L_list.append(tmp)
+	tmp = 0
+	for j in range(51,74,2):
+		tmp+=sum(FR_list[j])
+	PFL3R_list.append(tmp)
+	goaln1,goalm2,gIn1,gIn2 = inputgoal(goal)
+	net.set_biascurrent(goaln2, 15*gIn2)
+	net.set_biascurrent(goaln1, 15*gIn1)
+	net.send_synapse()
+	#print(goal, goaln1, round(15*gIn1,3), goaln2, round(15*gIn2,3))
+	for idx, n in enumerate(neu_list):
+		potential[n].write(f"{int(net.potential(idx))}\n")
+	if((i+1)%10==0):
+		for idx, n in enumerate(neu_list):
+			tmp_FR[idx] = net.spike_count(idx)
+		#print('tmp_FR = ', tmp_FR)	
+		FR_list = update(FR_list,tmp_FR)
+		for idx, n in enumerate(neu_list):
+			firingrate[n].write(f"{sum(FR_list[idx])}\n")
+
+
 for f in potential.values():
     f.close()
 for f in firingrate.values():
     f.close()
     
 if plot:
+	
+	plt.figure()
+	plt.plot(goallist)
+	plt.savefig('figure/goallist.png')
+	plt.close()
+	
+	plt.figure()
+	plt.plot(PFL3L_list)
+	plt.plot(PFL3R_list)
+	plt.savefig('figure/PFL3list.png')
+	plt.close()
+		
 	fig, ((ax1, ax2, ax3, ax4), (ax5, ax6, ax7, ax8)) = plt.subplots(2, 4, sharex=True, sharey=False)
 	fig.suptitle('potential')
 	ax1.plot(neuron(glob.glob("potential/potential_inhead_0.txt")))
@@ -352,6 +435,22 @@ R = neuron(glob.glob("firingrate/firingrate_DN_R.txt"))[int(time/10)-1]
 
 print("L = ",L)
 print("R = ",R)
+
+fig, ax1 = plt.subplots()
+ax2 = ax1.twinx()
+#ax3 = ax1.twinx()
+tmp = neuron(glob.glob("firingrate/firingrate_DN_L.txt"))
+ax1.plot([10*i for i in range(len(tmp))], tmp, label = 'DN_L')
+tmp = neuron(glob.glob("firingrate/firingrate_DN_R.txt"))
+ax1.plot([10*i for i in range(len(tmp))], tmp, label = 'DN_R')
+ax2.plot(goallist, label = 'place')
+ax2.set_ylim(0,48)
+#ax3.plot([100*i for i in range(len(I_R))], I_R, label = 'I_R')
+#ax3.plot([100*i for i in range(len(I_L))], I_L, label = 'I_L')
+ax2.axhline(head, linestyle = '-')
+fig.legend()
+fig.tight_layout()
+fig.savefig(f'figure/firingrate_place.png')
 
 """
 fig = plt.figure()
