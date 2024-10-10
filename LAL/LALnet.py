@@ -74,7 +74,7 @@ for _ in range(7000):
 		#head = head+turn
 		#place.append(head)
 		try:
-			with open('/home/tim/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/1.12.2_pipe_input_lua_240514/.minecraft/mods/advancedMacros/macros/macros/turn', 'w') as f:
+			with open('/home/tim/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/1.12.2_pipe_input_lua_240514/.minecraft/mods/advancedMacros/macros/turn', 'w') as f:
 				print("{:<18}  {:1}        ".format(turn, strength), end = "")
 				if _>=300:
 					if (strength == 0):
@@ -90,7 +90,7 @@ for _ in range(7000):
 			print('pass')
 			pass
 		try:
-			with open('/home/tim/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/1.12.2_pipe_input_lua_240514/.minecraft/mods/advancedMacros/macros/macros/pose', 'r') as pose:
+			with open('/home/tim/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/1.12.2_pipe_input_lua_240514/.minecraft/mods/advancedMacros/macros/pose', 'r') as pose:
 				line = pose.readline()
 				if line:
 					t, tx, ty, tz, rx, ry = line.strip().split()
@@ -109,7 +109,7 @@ for _ in range(7000):
 	
 print("exit for loop")
 try:
-	with open('/home/tim/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/1.12.2_pipe_input_lua_240514/.minecraft/mods/advancedMacros/macros/macros/turn', 'w') as f:
+	with open('/home/tim/.var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher/instances/1.12.2_pipe_input_lua_240514/.minecraft/mods/advancedMacros/macros/turn', 'w') as f:
 		for i in range(100):
 			f.write("F1")
 			time.sleep(0.001)

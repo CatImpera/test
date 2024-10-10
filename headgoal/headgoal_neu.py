@@ -117,12 +117,15 @@ FR_list = [[0 for j in range(10)] for i in range(len(neu_list))]
 tmp_FR = [0 for i in range(len(neu_list))]
 time = 20000
 
+print(headn1, 15*hIn1)
+print(headn2, 15*hIn2)
+print(goaln1, 15*gIn1)
+print(goaln2, 15*gIn2)
 for i in range(time):
 	net.set_biascurrent(headn2, 15*hIn2)
 	net.set_biascurrent(headn1, 15*hIn1)
 	net.set_biascurrent(goaln2, 15*gIn2)
 	net.set_biascurrent(goaln1, 15*gIn1)
-	net.send_synapse()
 	for idx, n in enumerate(neu_list):
 		potential[n].write(f"{int(net.potential(idx))}\n")
 	if((i+1)%10==0):

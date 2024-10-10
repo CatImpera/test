@@ -6,6 +6,12 @@ FC2_list = [i for i in range(22,34)]              #FC2        22~33
 headinput_list = [i for i in range(34,50)]        #headinput  34~49
 PFL3_list = [i for i in range(50,74)]             #PFL3       50~73
 connection = open("parameter/Connection_Table_LIF.txt","w")
+neuron = open("parameter/neuronParameter_LIF.txt","w")
+#-----neuron--------------------------------------------------------------------------------
+thres = 170
+for i in range(74):
+	neuron.write(f"{i} -0.1 128 {thres} 64 3\n")
+#-----connection----------------------------------------------------------------------------
 #inhead<->inhead
 
 con = 1.8
