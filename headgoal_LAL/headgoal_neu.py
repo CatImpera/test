@@ -122,8 +122,10 @@ FR_list = [[0 for j in range(10)] for i in range(len(neu_list))]
 tmp_FR = [0 for i in range(len(neu_list))]
 
 #parameter---------------------------------------------------------------------
-time = 4200
+time = 3200
+factor = 18
 goallist = []
+"""
 head = 24
 goal = 24
 headn1,headn2,hIn1,hIn2 =inputhead(head)
@@ -146,7 +148,7 @@ for i in range(1000):
 		FR_list = update(FR_list,tmp_FR)
 		for idx, n in enumerate(neu_list):
 			firingrate[n].write(f"{sum(FR_list[idx])}\n")
-	
+"""
 head = 24
 goal = 34
 headn1,headn2,hIn1,hIn2 =inputhead(head)
@@ -154,10 +156,10 @@ goaln1,goaln2,gIn1,gIn2 =inputgoal(goal)
 print("headn1,headn2,hIn1,hIn2 = ",headn1,headn2,hIn1,hIn2)
 print("goaln1,goaln2,gIn1,gIn2 = ",goaln1,goaln2,gIn1,gIn2)
 for i in range(200):
-	net.set_biascurrent(headn2, 15*hIn2)
-	net.set_biascurrent(headn1, 15*hIn1)
-	net.set_biascurrent(goaln2, 15*gIn2)
-	net.set_biascurrent(goaln1, 15*gIn1)
+	net.set_biascurrent(headn2, factor*hIn2)
+	net.set_biascurrent(headn1, factor*hIn1)
+	net.set_biascurrent(goaln2, factor*gIn2)
+	net.set_biascurrent(goaln1, factor*gIn1)
 	net.send_synapse()
 	goallist.append(goal)
 	for idx, n in enumerate(neu_list):
@@ -171,7 +173,7 @@ for i in range(200):
 			firingrate[n].write(f"{sum(FR_list[idx])}\n")
 
 
-fold = 0.01
+fold = 0.005
 PFL3L_list = []
 PFL3R_list = []
 for i in range(3000):
@@ -190,8 +192,10 @@ for i in range(3000):
 		tmp+=sum(FR_list[j])
 	PFL3R_list.append(tmp)
 	goaln1,goalm2,gIn1,gIn2 = inputgoal(goal)
-	net.set_biascurrent(goaln2, 15*gIn2)
-	net.set_biascurrent(goaln1, 15*gIn1)
+	net.set_biascurrent(goaln2, factor*gIn2)
+	net.set_biascurrent(goaln1, factor*gIn1)
+	net.set_biascurrent(headn2, factor*hIn2)
+	net.set_biascurrent(headn1, factor*hIn1)
 	net.send_synapse()
 	#print(goal, goaln1, round(15*gIn1,3), goaln2, round(15*gIn2,3))
 	for idx, n in enumerate(neu_list):

@@ -7,7 +7,6 @@ import time
 from function import *
 
 
-time.sleep(3)
 net = iqif.lifnet("parameter/neuronParameter_LIF.txt", "parameter/Connection_Table_LIF.txt")
 #--------record-------------------------------------------------------------------------
 neurons = [i for i in range(13)]

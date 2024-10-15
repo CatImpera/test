@@ -119,28 +119,28 @@ for i in range(50,74,2):
 	connection.write(f"{i} 74 {con} 64\n")
 for i in range(51,74,2):
 	connection.write(f"{i} 75 {con} 64\n")
-#LAL_PFL3
+#LAL->E
 con = 2
 connection.write(f"74 77 {con} 64\n")
 connection.write(f"75 76 {con} 64\n")
 
-#L->Exc
-con = 2.5
+#Exc->inh
+con = 2
 connection.write(f"76 78 {con} 64\n")
 connection.write(f"77 79 {con} 64\n")
 
 #inh->Exc
-con = -0.5
+con = 0
 connection.write(f"78 77 {con} 64\n")
 connection.write(f"79 76 {con} 64\n")
 
 #Exc->LR
-con = 3
+con = 2
 connection.write(f"76 80 {con} 64\n")
 connection.write(f"77 81 {con} 64\n")
 
 #inh->LR
-con = -0.5
+con = -1
 connection.write(f"78 81 {con} 64\n")
 connection.write(f"79 80 {con} 64\n")
 
