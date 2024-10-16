@@ -150,7 +150,7 @@ for i in range(1000):
 			firingrate[n].write(f"{sum(FR_list[idx])}\n")
 """
 head = 24
-goal = 34
+goal = 14
 headn1,headn2,hIn1,hIn2 =inputhead(head)
 goaln1,goaln2,gIn1,gIn2 =inputgoal(goal)
 print("headn1,headn2,hIn1,hIn2 = ",headn1,headn2,hIn1,hIn2)
