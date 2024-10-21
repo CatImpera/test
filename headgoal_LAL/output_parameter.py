@@ -5,15 +5,14 @@ ingoalin_list = [21]                              #ingoalin   21
 FC2_list = [i for i in range(22,34)]              #FC2        22~33
 headinput_list = [i for i in range(34,50)]        #headinput  34~49
 PFL3_list = [i for i in range(50,74)]             #PFL3       50~73
-LAL_list = [i for i in range(74, 81)]             #LAL        74~81
+LAL_list = [i for i in range(74, 82)]             #LAL        74~81
 connection = open("parameter/Connection_Table_LIF.txt","w")
 neuron = open("parameter/neuronParameter_LIF.txt","w")
 
 #0 -0.1 128 192 64 3
 #index, g, rest, threshold, reset, noise 
-threshold = 150
-for i in range(12):
-	connection.write(f"{i} 12 {con1} 64\n")
+threshold = 170
+for i in range(82):
 	neuron.write(f"{i} -0.1 128 {threshold} 64 3\n")
 #inhead<->inhead
 
@@ -138,7 +137,7 @@ connection.write(f"76 78 {con} 64\n")
 connection.write(f"77 79 {con} 64\n")
 
 #inh->Exc
-con = 0
+con = -0.5
 connection.write(f"78 77 {con} 64\n")
 connection.write(f"79 76 {con} 64\n")
 

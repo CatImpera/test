@@ -122,23 +122,34 @@ FR_list = [[0 for j in range(10)] for i in range(len(neu_list))]
 tmp_FR = [0 for i in range(len(neu_list))]
 
 #parameter---------------------------------------------------------------------
-time = 3200
+pre_time = 2000
+time = 10
 factor = 18
 goallist = []
-"""
+PFL3L_list = []
+PFL3R_list = []
+
 head = 24
 goal = 24
 headn1,headn2,hIn1,hIn2 =inputhead(head)
 goaln1,goaln2,gIn1,gIn2 =inputgoal(goal)
 print("headn1,headn2,hIn1,hIn2 = ",headn1,headn2,hIn1,hIn2)
 print("goaln1,goaln2,gIn1,gIn2 = ",goaln1,goaln2,gIn1,gIn2)
-for i in range(1000):
+for i in range(pre_time):
 	net.set_biascurrent(headn2, 15*hIn2)
 	net.set_biascurrent(headn1, 15*hIn1)
 	net.set_biascurrent(goaln2, 15*gIn2)
 	net.set_biascurrent(goaln1, 15*gIn1)
 	net.send_synapse()
-	goallist.append(0)
+	goallist.append(34)
+	tmp = 0
+	for j in range(50,73,2):
+		tmp+=sum(FR_list[j])
+	PFL3L_list.append(tmp)
+	tmp = 0
+	for j in range(51,74,2):
+		tmp+=sum(FR_list[j])
+	PFL3R_list.append(tmp)
 	for idx, n in enumerate(neu_list):
 		potential[n].write(f"{int(net.potential(idx))}\n")
 	if((i+1)%10==0):
@@ -148,6 +159,7 @@ for i in range(1000):
 		FR_list = update(FR_list,tmp_FR)
 		for idx, n in enumerate(neu_list):
 			firingrate[n].write(f"{sum(FR_list[idx])}\n")
+
 """
 head = 24
 goal = 14
@@ -172,12 +184,13 @@ for i in range(200):
 		for idx, n in enumerate(neu_list):
 			firingrate[n].write(f"{sum(FR_list[idx])}\n")
 
-
+"""
+head = 24
+goal = 34
+headn1,headn2,hIn1,hIn2 =inputhead(head)
+goaln1,goaln2,gIn1,gIn2 =inputgoal(goal)
 fold = 0.005
-PFL3L_list = []
-PFL3R_list = []
-for i in range(3000):
-
+for i in range(time):
 	left_motor = sum(FR_list[80])
 	right_motor = sum(FR_list[81])
 	turn = (left_motor-right_motor)*fold
@@ -213,20 +226,19 @@ for f in potential.values():
     f.close()
 for f in firingrate.values():
     f.close()
-    
+
 if plot:
-	
-	plt.figure()
-	plt.plot(goallist)
-	plt.savefig('figure/goallist.png')
-	plt.close()
-	
-	plt.figure()
-	plt.plot(PFL3L_list)
-	plt.plot(PFL3R_list)
-	plt.savefig('figure/PFL3list.png')
-	plt.close()
-		
+	fig, ax1 = plt.subplots()
+	ax2 = ax1.twinx()
+	ax1.plot(PFL3L_list, label = "PFL3L")
+	ax1.plot(PFL3L_list, label = "PFL3L")
+	ax1.axvline(pre_time, color = 'black', linestyle = 'dashed')
+	ax2.plot(goallist, color = 'green', label = 'place')
+	ax2.set_ylim(0,48)
+	fig.tight_layout()
+	plt.savefig("figure/PFL3.png")
+#---------------------potential_head-----------------------------
+	"""
 	fig, ((ax1, ax2, ax3, ax4), (ax5, ax6, ax7, ax8)) = plt.subplots(2, 4, sharex=True, sharey=False)
 	fig.suptitle('potential')
 	ax1.plot(neuron(glob.glob("potential/potential_inhead_0.txt")))
@@ -240,7 +252,9 @@ if plot:
 	plt.xlabel('time(ms)')
 	plt.ylabel('v')
 	plt.savefig('figure/potential_head.png')
-
+	"""
+#----------------------potential_goal-----------------------------------
+	"""
 	fig, ((ax1, ax2, ax3, ax4), (ax5, ax6, ax7, ax8)) = plt.subplots(2, 4, sharex=True, sharey=False)
 	fig.suptitle('potential')
 	ax1.plot(neuron(glob.glob("potential/potential_ingoal_0.txt")))
@@ -254,7 +268,9 @@ if plot:
 	plt.xlabel('time(ms)')
 	plt.ylabel('v')
 	plt.savefig('figure/potential_goal.png')
-
+	"""
+#----------------------------potential_FC2-----------------------------
+	"""
 	fig, ((ax1, ax2, ax3, ax4), (ax5, ax6, ax7, ax8)) = plt.subplots(2, 4, sharex=True, sharey=False)
 	fig.suptitle('potential')
 	ax1.plot(neuron(glob.glob("potential/potential_FC2_0.txt")))
@@ -268,7 +284,9 @@ if plot:
 	plt.xlabel('time(ms)')
 	plt.ylabel('v')
 	plt.savefig('figure/potential_FC2.png')
-
+	"""
+#--------------------------firingrate_head--------------------------
+	"""
 	plt.figure()
 	plt.plot(neuron(glob.glob("firingrate/firingrate_inhead_0.txt")))
 	plt.plot(neuron(glob.glob("firingrate/firingrate_inhead_1.txt")))
@@ -281,7 +299,9 @@ if plot:
 	plt.xlabel('time(ms)')
 	plt.ylabel('v')
 	plt.savefig('figure/firingrate_head.png')
-
+	"""
+#-------------------------firingrate_goal------------------------------
+	"""
 	plt.figure()
 	#print('len = ', len(neuron(glob.glob("firingrate/firingrate_inhead_8.txt"))))
 	plt.plot(neuron(glob.glob("firingrate/firingrate_ingoal_0.txt")))
@@ -299,8 +319,8 @@ if plot:
 	plt.xlabel('time(ms)')
 	plt.ylabel('v')
 	plt.savefig('figure/firingrate_goal.png')
-
-
+	"""
+#--------------------------trace_inhead-------------------------------
 	plt.figure()
 	plt.bar(0,neuron(glob.glob("firingrate/firingrate_inhead_0.txt"))[int(time/10)-1])
 	plt.bar(1,neuron(glob.glob("firingrate/firingrate_inhead_1.txt"))[int(time/10)-1])
@@ -314,53 +334,53 @@ if plot:
 	plt.xlabel('neuron index')
 	plt.ylabel('r')
 	plt.savefig('figure/trace_inhead.png')
-	
+#------------------------------trace_inheadin---------------------------------
 	plt.figure()
 	plt.bar(0,neuron(glob.glob("firingrate/firingrate_inheadin_0.txt"))[int(time/10)-1])
-
 	plt.xlabel('neuron index')
 	plt.ylabel('r')
 	plt.savefig('figure/trace_inheadin.png')
-	
+#------------------------------potential_inheadin-------------------------------
 	plt.figure()
 	plt.plot(neuron(glob.glob("potential/potential_inheadin_0.txt")))
 
 	plt.xlabel('neuron index')
 	plt.ylabel('r')
 	plt.savefig('figure/potential_inheadin.png')
-
+#------------------------------trace_ingoal-------------------------------------
+	t = pre_time+time
 	plt.figure()
 	#print(neuron(glob.glob("firingrate/firingrate_inhead_0.txt")))
-	plt.bar(0,neuron(glob.glob("firingrate/firingrate_ingoal_0.txt"))[int(time/10)-1])
-	plt.bar(1,neuron(glob.glob("firingrate/firingrate_ingoal_1.txt"))[int(time/10)-1])
-	plt.bar(2,neuron(glob.glob("firingrate/firingrate_ingoal_2.txt"))[int(time/10)-1])
-	plt.bar(3,neuron(glob.glob("firingrate/firingrate_ingoal_3.txt"))[int(time/10)-1])
-	plt.bar(4,neuron(glob.glob("firingrate/firingrate_ingoal_4.txt"))[int(time/10)-1])
-	plt.bar(5,neuron(glob.glob("firingrate/firingrate_ingoal_5.txt"))[int(time/10)-1])
-	plt.bar(6,neuron(glob.glob("firingrate/firingrate_ingoal_6.txt"))[int(time/10)-1])
-	plt.bar(7,neuron(glob.glob("firingrate/firingrate_ingoal_7.txt"))[int(time/10)-1])
-	plt.bar(8,neuron(glob.glob("firingrate/firingrate_ingoal_8.txt"))[int(time/10)-1])
-	plt.bar(9,neuron(glob.glob("firingrate/firingrate_ingoal_9.txt"))[int(time/10)-1])
-	plt.bar(10,neuron(glob.glob("firingrate/firingrate_ingoal_10.txt"))[int(time/10)-1])
-	plt.bar(11,neuron(glob.glob("firingrate/firingrate_ingoal_11.txt"))[int(time/10)-1])
+	plt.bar(0,neuron(glob.glob("firingrate/firingrate_ingoal_0.txt"))[int(t/10)-1])
+	plt.bar(1,neuron(glob.glob("firingrate/firingrate_ingoal_1.txt"))[int(t/10)-1])
+	plt.bar(2,neuron(glob.glob("firingrate/firingrate_ingoal_2.txt"))[int(t/10)-1])
+	plt.bar(3,neuron(glob.glob("firingrate/firingrate_ingoal_3.txt"))[int(t/10)-1])
+	plt.bar(4,neuron(glob.glob("firingrate/firingrate_ingoal_4.txt"))[int(t/10)-1])
+	plt.bar(5,neuron(glob.glob("firingrate/firingrate_ingoal_5.txt"))[int(t/10)-1])
+	plt.bar(6,neuron(glob.glob("firingrate/firingrate_ingoal_6.txt"))[int(t/10)-1])
+	plt.bar(7,neuron(glob.glob("firingrate/firingrate_ingoal_7.txt"))[int(t/10)-1])
+	plt.bar(8,neuron(glob.glob("firingrate/firingrate_ingoal_8.txt"))[int(t/10)-1])
+	plt.bar(9,neuron(glob.glob("firingrate/firingrate_ingoal_9.txt"))[int(t/10)-1])
+	plt.bar(10,neuron(glob.glob("firingrate/firingrate_ingoal_10.txt"))[int(t/10)-1])
+	plt.bar(11,neuron(glob.glob("firingrate/firingrate_ingoal_11.txt"))[int(t/10)-1])
 
 	plt.xlabel('neuron index')
 	plt.ylabel('r')
 	plt.savefig('figure/trace_ingoal.png')
 
 	plt.figure()
-	plt.bar(0,neuron(glob.glob("firingrate/firingrate_FC2_0.txt"))[int(time/10)-1])
-	plt.bar(1,neuron(glob.glob("firingrate/firingrate_FC2_1.txt"))[int(time/10)-1])
-	plt.bar(2,neuron(glob.glob("firingrate/firingrate_FC2_2.txt"))[int(time/10)-1])
-	plt.bar(3,neuron(glob.glob("firingrate/firingrate_FC2_3.txt"))[int(time/10)-1])
-	plt.bar(4,neuron(glob.glob("firingrate/firingrate_FC2_4.txt"))[int(time/10)-1])
-	plt.bar(5,neuron(glob.glob("firingrate/firingrate_FC2_5.txt"))[int(time/10)-1])
-	plt.bar(6,neuron(glob.glob("firingrate/firingrate_FC2_6.txt"))[int(time/10)-1])
-	plt.bar(7,neuron(glob.glob("firingrate/firingrate_FC2_7.txt"))[int(time/10)-1])
-	plt.bar(8,neuron(glob.glob("firingrate/firingrate_FC2_8.txt"))[int(time/10)-1])
-	plt.bar(9,neuron(glob.glob("firingrate/firingrate_FC2_9.txt"))[int(time/10)-1])
-	plt.bar(10,neuron(glob.glob("firingrate/firingrate_FC2_10.txt"))[int(time/10)-1])
-	plt.bar(11,neuron(glob.glob("firingrate/firingrate_FC2_11.txt"))[int(time/10)-1])
+	plt.bar(0,neuron(glob.glob("firingrate/firingrate_FC2_0.txt"))[int(t/10)-1])
+	plt.bar(1,neuron(glob.glob("firingrate/firingrate_FC2_1.txt"))[int(t/10)-1])
+	plt.bar(2,neuron(glob.glob("firingrate/firingrate_FC2_2.txt"))[int(t/10)-1])
+	plt.bar(3,neuron(glob.glob("firingrate/firingrate_FC2_3.txt"))[int(t/10)-1])
+	plt.bar(4,neuron(glob.glob("firingrate/firingrate_FC2_4.txt"))[int(t/10)-1])
+	plt.bar(5,neuron(glob.glob("firingrate/firingrate_FC2_5.txt"))[int(t/10)-1])
+	plt.bar(6,neuron(glob.glob("firingrate/firingrate_FC2_6.txt"))[int(t/10)-1])
+	plt.bar(7,neuron(glob.glob("firingrate/firingrate_FC2_7.txt"))[int(t/10)-1])
+	plt.bar(8,neuron(glob.glob("firingrate/firingrate_FC2_8.txt"))[int(t/10)-1])
+	plt.bar(9,neuron(glob.glob("firingrate/firingrate_FC2_9.txt"))[int(t/10)-1])
+	plt.bar(10,neuron(glob.glob("firingrate/firingrate_FC2_10.txt"))[int(t/10)-1])
+	plt.bar(11,neuron(glob.glob("firingrate/firingrate_FC2_11.txt"))[int(t/10)-1])
 
 	plt.xlabel('neuron index')
 	plt.ylabel('r')
@@ -368,52 +388,52 @@ if plot:
 
 
 	plt.figure()
-	plt.bar(0,neuron(glob.glob("firingrate/firingrate_headinput_0.txt"))[int(time/10)-1])
-	plt.bar(1,neuron(glob.glob("firingrate/firingrate_headinput_1.txt"))[int(time/10)-1])
-	plt.bar(2,neuron(glob.glob("firingrate/firingrate_headinput_2.txt"))[int(time/10)-1])
-	plt.bar(3,neuron(glob.glob("firingrate/firingrate_headinput_3.txt"))[int(time/10)-1])
-	plt.bar(4,neuron(glob.glob("firingrate/firingrate_headinput_4.txt"))[int(time/10)-1])
-	plt.bar(5,neuron(glob.glob("firingrate/firingrate_headinput_5.txt"))[int(time/10)-1])
-	plt.bar(6,neuron(glob.glob("firingrate/firingrate_headinput_6.txt"))[int(time/10)-1])
-	plt.bar(7,neuron(glob.glob("firingrate/firingrate_headinput_7.txt"))[int(time/10)-1])
-	plt.bar(8,neuron(glob.glob("firingrate/firingrate_headinput_8.txt"))[int(time/10)-1])
-	plt.bar(9,neuron(glob.glob("firingrate/firingrate_headinput_9.txt"))[int(time/10)-1])
-	plt.bar(10,neuron(glob.glob("firingrate/firingrate_headinput_10.txt"))[int(time/10)-1])
-	plt.bar(11,neuron(glob.glob("firingrate/firingrate_headinput_11.txt"))[int(time/10)-1])
-	plt.bar(12,neuron(glob.glob("firingrate/firingrate_headinput_12.txt"))[int(time/10)-1])
-	plt.bar(13,neuron(glob.glob("firingrate/firingrate_headinput_13.txt"))[int(time/10)-1])
-	plt.bar(14,neuron(glob.glob("firingrate/firingrate_headinput_14.txt"))[int(time/10)-1])
-	plt.bar(15,neuron(glob.glob("firingrate/firingrate_headinput_15.txt"))[int(time/10)-1])
+	plt.bar(0,neuron(glob.glob("firingrate/firingrate_headinput_0.txt"))[int(t/10)-1])
+	plt.bar(1,neuron(glob.glob("firingrate/firingrate_headinput_1.txt"))[int(t/10)-1])
+	plt.bar(2,neuron(glob.glob("firingrate/firingrate_headinput_2.txt"))[int(t/10)-1])
+	plt.bar(3,neuron(glob.glob("firingrate/firingrate_headinput_3.txt"))[int(t/10)-1])
+	plt.bar(4,neuron(glob.glob("firingrate/firingrate_headinput_4.txt"))[int(t/10)-1])
+	plt.bar(5,neuron(glob.glob("firingrate/firingrate_headinput_5.txt"))[int(t/10)-1])
+	plt.bar(6,neuron(glob.glob("firingrate/firingrate_headinput_6.txt"))[int(t/10)-1])
+	plt.bar(7,neuron(glob.glob("firingrate/firingrate_headinput_7.txt"))[int(t/10)-1])
+	plt.bar(8,neuron(glob.glob("firingrate/firingrate_headinput_8.txt"))[int(t/10)-1])
+	plt.bar(9,neuron(glob.glob("firingrate/firingrate_headinput_9.txt"))[int(t/10)-1])
+	plt.bar(10,neuron(glob.glob("firingrate/firingrate_headinput_10.txt"))[int(t/10)-1])
+	plt.bar(11,neuron(glob.glob("firingrate/firingrate_headinput_11.txt"))[int(t/10)-1])
+	plt.bar(12,neuron(glob.glob("firingrate/firingrate_headinput_12.txt"))[int(t/10)-1])
+	plt.bar(13,neuron(glob.glob("firingrate/firingrate_headinput_13.txt"))[int(t/10)-1])
+	plt.bar(14,neuron(glob.glob("firingrate/firingrate_headinput_14.txt"))[int(t/10)-1])
+	plt.bar(15,neuron(glob.glob("firingrate/firingrate_headinput_15.txt"))[int(t/10)-1])
 
 	plt.xlabel('neuron index')
 	plt.ylabel('r')
 	plt.savefig('figure/trace_headinput.png')
 
 	plt.figure()
-	plt.bar(0,neuron(glob.glob("firingrate/firingrate_PFL3_0.txt"))[int(time/10)-1],color='red')
-	plt.bar(1,neuron(glob.glob("firingrate/firingrate_PFL3_1.txt"))[int(time/10)-1],color='blue')
-	plt.bar(2,neuron(glob.glob("firingrate/firingrate_PFL3_2.txt"))[int(time/10)-1],color='red')
-	plt.bar(3,neuron(glob.glob("firingrate/firingrate_PFL3_3.txt"))[int(time/10)-1],color='blue')
-	plt.bar(4,neuron(glob.glob("firingrate/firingrate_PFL3_4.txt"))[int(time/10)-1],color='red')
-	plt.bar(5,neuron(glob.glob("firingrate/firingrate_PFL3_5.txt"))[int(time/10)-1],color='blue')
-	plt.bar(6,neuron(glob.glob("firingrate/firingrate_PFL3_6.txt"))[int(time/10)-1],color='red')
-	plt.bar(7,neuron(glob.glob("firingrate/firingrate_PFL3_7.txt"))[int(time/10)-1],color='blue')
-	plt.bar(8,neuron(glob.glob("firingrate/firingrate_PFL3_8.txt"))[int(time/10)-1],color='red')
-	plt.bar(9,neuron(glob.glob("firingrate/firingrate_PFL3_9.txt"))[int(time/10)-1],color='blue')
-	plt.bar(10,neuron(glob.glob("firingrate/firingrate_PFL3_10.txt"))[int(time/10)-1],color='red')
-	plt.bar(11,neuron(glob.glob("firingrate/firingrate_PFL3_11.txt"))[int(time/10)-1],color='blue')
-	plt.bar(12,neuron(glob.glob("firingrate/firingrate_PFL3_12.txt"))[int(time/10)-1],color='red')
-	plt.bar(13,neuron(glob.glob("firingrate/firingrate_PFL3_13.txt"))[int(time/10)-1],color='blue')
-	plt.bar(14,neuron(glob.glob("firingrate/firingrate_PFL3_14.txt"))[int(time/10)-1],color='red')
-	plt.bar(15,neuron(glob.glob("firingrate/firingrate_PFL3_15.txt"))[int(time/10)-1],color='blue')
-	plt.bar(16,neuron(glob.glob("firingrate/firingrate_PFL3_16.txt"))[int(time/10)-1],color='red')
-	plt.bar(17,neuron(glob.glob("firingrate/firingrate_PFL3_17.txt"))[int(time/10)-1],color='blue')
-	plt.bar(18,neuron(glob.glob("firingrate/firingrate_PFL3_18.txt"))[int(time/10)-1],color='red')
-	plt.bar(19,neuron(glob.glob("firingrate/firingrate_PFL3_19.txt"))[int(time/10)-1],color='blue')
-	plt.bar(20,neuron(glob.glob("firingrate/firingrate_PFL3_20.txt"))[int(time/10)-1],color='red')
-	plt.bar(21,neuron(glob.glob("firingrate/firingrate_PFL3_21.txt"))[int(time/10)-1],color='blue')
-	plt.bar(22,neuron(glob.glob("firingrate/firingrate_PFL3_22.txt"))[int(time/10)-1],color='red')
-	plt.bar(23,neuron(glob.glob("firingrate/firingrate_PFL3_23.txt"))[int(time/10)-1],color='blue')
+	plt.bar(0,neuron(glob.glob("firingrate/firingrate_PFL3_0.txt"))[int(t/10)-1],color='red')
+	plt.bar(1,neuron(glob.glob("firingrate/firingrate_PFL3_1.txt"))[int(t/10)-1],color='blue')
+	plt.bar(2,neuron(glob.glob("firingrate/firingrate_PFL3_2.txt"))[int(t/10)-1],color='red')
+	plt.bar(3,neuron(glob.glob("firingrate/firingrate_PFL3_3.txt"))[int(t/10)-1],color='blue')
+	plt.bar(4,neuron(glob.glob("firingrate/firingrate_PFL3_4.txt"))[int(t/10)-1],color='red')
+	plt.bar(5,neuron(glob.glob("firingrate/firingrate_PFL3_5.txt"))[int(t/10)-1],color='blue')
+	plt.bar(6,neuron(glob.glob("firingrate/firingrate_PFL3_6.txt"))[int(t/10)-1],color='red')
+	plt.bar(7,neuron(glob.glob("firingrate/firingrate_PFL3_7.txt"))[int(t/10)-1],color='blue')
+	plt.bar(8,neuron(glob.glob("firingrate/firingrate_PFL3_8.txt"))[int(t/10)-1],color='red')
+	plt.bar(9,neuron(glob.glob("firingrate/firingrate_PFL3_9.txt"))[int(t/10)-1],color='blue')
+	plt.bar(10,neuron(glob.glob("firingrate/firingrate_PFL3_10.txt"))[int(t/10)-1],color='red')
+	plt.bar(11,neuron(glob.glob("firingrate/firingrate_PFL3_11.txt"))[int(t/10)-1],color='blue')
+	plt.bar(12,neuron(glob.glob("firingrate/firingrate_PFL3_12.txt"))[int(t/10)-1],color='red')
+	plt.bar(13,neuron(glob.glob("firingrate/firingrate_PFL3_13.txt"))[int(t/10)-1],color='blue')
+	plt.bar(14,neuron(glob.glob("firingrate/firingrate_PFL3_14.txt"))[int(t/10)-1],color='red')
+	plt.bar(15,neuron(glob.glob("firingrate/firingrate_PFL3_15.txt"))[int(t/10)-1],color='blue')
+	plt.bar(16,neuron(glob.glob("firingrate/firingrate_PFL3_16.txt"))[int(t/10)-1],color='red')
+	plt.bar(17,neuron(glob.glob("firingrate/firingrate_PFL3_17.txt"))[int(t/10)-1],color='blue')
+	plt.bar(18,neuron(glob.glob("firingrate/firingrate_PFL3_18.txt"))[int(t/10)-1],color='red')
+	plt.bar(19,neuron(glob.glob("firingrate/firingrate_PFL3_19.txt"))[int(t/10)-1],color='blue')
+	plt.bar(20,neuron(glob.glob("firingrate/firingrate_PFL3_20.txt"))[int(t/10)-1],color='red')
+	plt.bar(21,neuron(glob.glob("firingrate/firingrate_PFL3_21.txt"))[int(t/10)-1],color='blue')
+	plt.bar(22,neuron(glob.glob("firingrate/firingrate_PFL3_22.txt"))[int(t/10)-1],color='red')
+	plt.bar(23,neuron(glob.glob("firingrate/firingrate_PFL3_23.txt"))[int(t/10)-1],color='blue')
 
 	plt.xlabel('neuron index')
 	plt.ylabel('r')
@@ -444,15 +464,18 @@ fig, ax1 = plt.subplots()
 ax2 = ax1.twinx()
 #ax3 = ax1.twinx()
 tmp = neuron(glob.glob("firingrate/firingrate_DN_L.txt"))
-ax1.plot([10*i for i in range(len(tmp))], tmp, label = 'DN_L')
+ax1.plot([10*i for i in range(len(tmp))], tmp, color = 'blue', label = 'DN_L')
 tmp = neuron(glob.glob("firingrate/firingrate_DN_R.txt"))
-ax1.plot([10*i for i in range(len(tmp))], tmp, label = 'DN_R')
-ax2.plot(goallist, label = 'place')
+ax1.plot([10*i for i in range(len(tmp))], tmp, color = 'red', label = 'DN_R')
+ax2.plot(goallist, color = 'green', label = 'place')
 ax2.set_ylim(0,48)
 #ax3.plot([100*i for i in range(len(I_R))], I_R, label = 'I_R')
 #ax3.plot([100*i for i in range(len(I_L))], I_L, label = 'I_L')
-ax2.axhline(head, linestyle = '-')
-fig.legend()
+ax2.axhline(head, color = 'black', linestyle = 'dashed')
+ax1.set_xlabel('time')
+ax1.set_ylabel('firing rate')
+ax2.set_ylabel('place')
+fig.legend(bbox_to_anchor = (0.9,0.3))
 fig.tight_layout()
 fig.savefig(f'figure/firingrate_place.png')
 
