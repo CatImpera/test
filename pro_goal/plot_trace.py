@@ -26,7 +26,7 @@ def place_trace(goal_input):
 	fold = 0.004
 
 	############
-	head = 24  #
+	head = 20  #
 	goal = goal_input  #
 	############
 
@@ -34,7 +34,9 @@ def place_trace(goal_input):
 		left_motor = sum(FR_list[80])
 		right_motor = sum(FR_list[81])
 		turn = (left_motor-right_motor)*fold
-		if t>pre_time:
+		if (abs(goal-head)<0.1 and t>pre_time):
+			pass
+		elif t>pre_time:
 			goal = goal + turn
 		goallist.append(goal)
 
@@ -58,8 +60,11 @@ def place_trace(goal_input):
 	return goallist
 	
 plt.figure()
-for i in range(12,24,2):
-	plt.plot(place_trace(i),label = f'i')
-plt.legend()
+for i in range(12,37,2):
+	plt.plot(place_trace(i),label = f'{48-i}')
+plt.axhline(20, ls = '-')
+plt.ylabel('place')
+plt.xlabel('time')
+plt.legend(loc = 'right')
 plt.savefig("figure/place_trace.png")
 plt.close()
