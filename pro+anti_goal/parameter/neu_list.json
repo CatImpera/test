@@ -1,0 +1,16 @@
+{
+  "neu_list": [
+    "inhead_0", "inhead_1", "inhead_2", "inhead_3", "inhead_4", "inhead_5", "inhead_6", "inhead_7",
+    "ingoal_0", "ingoal_1", "ingoal_2", "ingoal_3", "ingoal_4", "ingoal_5", "ingoal_6", "ingoal_7",
+    "ingoal_8", "ingoal_9", "ingoal_10", "ingoal_11",
+    "inheadin_0",
+    "ingoalin_0",
+    "FC2_0", "FC2_1", "FC2_2", "FC2_3", "FC2_4", "FC2_5", "FC2_6", "FC2_7", "FC2_8", "FC2_9", "FC2_10", "FC2_11",
+    "headinput_0", "headinput_1", "headinput_2", "headinput_3", "headinput_4", "headinput_5", "headinput_6", "headinput_7",
+    "headinput_8", "headinput_9", "headinput_10", "headinput_11", "headinput_12", "headinput_13", "headinput_14", "headinput_15",
+    "PFL3_0", "PFL3_1", "PFL3_2", "PFL3_3", "PFL3_4", "PFL3_5", "PFL3_6", "PFL3_7", "PFL3_8", "PFL3_9", "PFL3_10", "PFL3_11",
+    "PFL3_12", "PFL3_13", "PFL3_14", "PFL3_15", "PFL3_16", "PFL3_17", "PFL3_18", "PFL3_19", "PFL3_20", "PFL3_21", "PFL3_22", "PFL3_23",
+    "L", "R", "EL", "ER", "IL", "IR", "DN_L", "DN_R"
+  ]
+}
+

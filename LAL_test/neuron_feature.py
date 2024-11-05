@@ -16,9 +16,13 @@ FR = [[0 for j in range(10)] for i in range(8)]
 tmp_FR = [0 for i in range(8)]
 #--------neuron parameters--------------------------------------------------------------
 I = 6
-for _ in range(80000):
-	net.set_biascurrent(0, I)
-	net.set_biascurrent(1, I)
+for _ in range(800):
+	if(_<400):
+		net.set_biascurrent(0, I)
+		net.set_biascurrent(1, I)
+	else:
+		net.set_biascurrent(0, 0)
+		net.set_biascurrent(1, 0)
 	net.send_synapse()
 	if((_%500)==0):
 		I+=0.5

@@ -11,7 +11,7 @@ def neuron(potential):
 	
 def update(list, tmp):
 	# index = 9最舊  index = 0 最新
-	for i in range(13):
+	for i in range(8):
 		for j in range(9,-1,-1):
 			list[i][j] = list[i][j-1]
 		list[i][0] = tmp[i]
