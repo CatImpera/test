@@ -42,11 +42,12 @@ for t in range(time):
 	for i in range(16):
 			net.set_biascurrent(34+i, 17*double_peak(i*3+1.5, center1 = head-12, center2 = head+12))
 	
-	if (t>7000 and t<7200):
+	if (t>4500 and t<5000):
 		net.set_biascurrent(86, 15)
 		net.set_biascurrent(87, 14)
 	else:
-		print("no current")
+		net.set_biascurrent(86, 0)
+		net.set_biascurrent(87, 0)
 	net.send_synapse()
 
 	for idx, n in enumerate(neu_list):
